@@ -1,0 +1,12 @@
+Trabajos para el lunes
+Entregar 3 diagramas
+
+1 - Hacer un programa para recaudar plata para el cumpleaños de Franco, para ello se pedirá un importe a 29 personas y al fin del programa se mostrará el importe recaudado.
+
+2 - Idem anterior, pero no se sabe cuantas personas van a aportar, y el fin del programa será cuando ingrese un importe 0
+
+3 - Idem anterior, pero al menos un compañero aportará y luego de cada ingreso se preguntara al operador si hay algún otro compañero que quiera aportar.
+
+4 - Un señor, mira un retrato y dice: "No tengo hermanos ni hermanas, pero el padre de este señor, (el del retrato), es el hijo de mi padre", Quién es la persona del retrato?
+
+Lunes a las 17hs.

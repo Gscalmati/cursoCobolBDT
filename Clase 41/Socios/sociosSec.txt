@@ -1,0 +1,5 @@
+1005Horacio        10000000
+1120Mirta          00005000
+3300Giovanni       00150000
+5400DiegoArmando   99999999
+6600LionelMessi    00000001

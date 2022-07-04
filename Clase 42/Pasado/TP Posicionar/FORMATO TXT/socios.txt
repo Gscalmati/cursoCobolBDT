@@ -1,0 +1,6 @@
+1100Juan           001000
+1110Marcos         002000
+1120Giselle        003000
+2200Matias         004000
+2210Eduardo        005000
+3300Norberto       006000

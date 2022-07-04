@@ -1,0 +1,18 @@
+En una escuela se quiere sacar una estadística de sus primeros 5 cursos del 1er año
+para ello curso por curso se preguntará a cada alumno del mismo 
+(no se sabe cuántos alumnos hay por curso) se preguntará (ingresa) nombre género 
+y si está de acuerdo o no con el nivel del curso. El fin de ingreso 
+por cada curso es cuando ingrese un nombre igual a fin. 
+
+Se desea emitir:
+por cada curso: porcentaje de mujeres en total y porcentaje de 
+mujeres que están de acuerdo con el nivel del curso.
+Entre todos los cursos: cantidad de varones y mujeres porcentaje 
+de mujeres y porcentaje de mujeres que están de acuerdo con el nivel.
+
+
+Para el proximo LUNES
+- Finalizar los procesos del ejercicio
+- Re armar el programa, todos los años tienen 5 cursos, no sabemos cuantos años vamos a encuestar, 
+si o si 1 año se encuesta, y al finalizar se consulta si hay otro. 
+Mostrar cuantas mujeres se encuestaron, cuantos hombres se encuestaron y el porcentaje de mujeres

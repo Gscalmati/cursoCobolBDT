@@ -1,0 +1,18 @@
+Lector de Archivos Secuenciales de Salida 3000
+00010 Pedro                +00005000.00 
+00020 Maria                +00000100.00 
+00040 Martin               +00001000.00 
+00050 Leonel               +01000000.00 
+00060 Liliana              -00004000.00 
+00080 Milo                 -00500000.00 
+
+
+Lector de Archivos Secuenciales de Salida 3000
+0010 M Polito               +0000000.00
+0020 A Miraglia             +0005000.00
+0020 M                      -0000500.00
+0030 M                      -0099999.00
+0050 B                      +0000000.00
+0060 M Mirta                -0002000.00
+0080 A Juan                 -0009999.00
+0081 A Juan D. Peron        +0099999.00
