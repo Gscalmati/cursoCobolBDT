@@ -17,7 +17,7 @@
        FILE SECTION.
        FD  FILIALES.
        01  soc-reg.
-           03 soc-cod pic 99.
+           03 soc-cod pic 9.
            03 soc-nom pic x(15).
        WORKING-STORAGE SECTION.
 

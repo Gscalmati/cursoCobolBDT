@@ -86,6 +86,7 @@
                   DISPLAY "No hay socios en esta filial"
                   GO TO 320-F-PROCESO-SOCIOS
            END-START.
+           DISPLAY soc-clave
            PERFORM 350-ACT-FILIAL
            PERFORM 360-LEER-SOC
            PERFORM UNTIL soc-filial <> w-act-fil OR fin-socio

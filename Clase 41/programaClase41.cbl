@@ -10,20 +10,20 @@
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
            SELECT SOCIOS ASSIGN TO "..\sociosIndex.dat"
+               ACCESS IS DYNAMIC
                ORGANIZATION IS INDEXED
-               ACCESS MODE IS DYNAMIC
-               RECORD KEY IS reg-codigos.
+               RECORD KEY IS soc-clave.
 
            SELECT FILIALES ASSIGN TO "..\filialesIndex.dat"
+               ACCESS IS RANDOM
                ORGANIZATION IS INDEXED
-               ACCESS MODE IS RANDOM
                RECORD KEY IS fil-cod.
        DATA DIVISION.
        FILE SECTION.
        FD  SOCIOS.
        01  soc-reg.
-           03 reg-codigos.
-               05 soc-fil pic 9.
+           03 soc-clave.
+               05 soc-fil pic 99.
                05 soc-cod pic 999.
            03 soc-nom pic x(15).
            03 soc-saldo pic s9(6)v99.
@@ -54,7 +54,7 @@
                OPEN INPUT SOCIOS.
 
            200-PEDIR-FILIAL.
-               DISPLAY "Inserte Numero de Filial. Para fin ingrese 0"
+               DISPLAY "Inserte Numero de Filial. Para fin ingrese 0".
                ACCEPT ing-fil.
                MOVE 0 TO flag.
                PERFORM UNTIL flag = 1 OR ing-fil = 0
@@ -76,19 +76,12 @@
 
            300-MOSTRAR-FILIAL.
                PERFORM 310-INICIO-SOCIOS.
-               DISPLAY reg-codigos.
-               START SOCIOS KEY IS = reg-codigos
+               DISPLAY soc-clave.
+               START SOCIOS KEY IS > soc-clave
                    INVALID KEY
                        DISPLAY "No hay Socios para esta Filial"
-                       EXIT
-               END-START.
-               DISPLAY "FILIAL N ", fil-cod, " - ", fil-nom.
-               PERFORM 340-ACT-FIL.
-               PERFORM 360-LEER-SOC.
-               PERFORM UNTIL filActual <> soc-fil OR flag = 1
-                   PERFORM 380-IMPRIMIR-SOCIO
-                   PERFORM 360-LEER-SOC
-               END-PERFORM.
+                       GO TO 999-EXIT.
+               PERFORM 330-PROCESAR-SOCIO.
 
 
 
@@ -96,6 +89,16 @@
                MOVE fil-cod TO soc-fil.
                MOVE ZEROES TO soc-cod.
                MOVE ZEROES TO flag.
+
+           330-PROCESAR-SOCIO.
+               DISPLAY "FILIAL N ", fil-cod, " - ", fil-nom.
+               PERFORM 340-ACT-FIL.
+               PERFORM 360-LEER-SOC.
+
+               PERFORM UNTIL filActual <> soc-fil OR flag = 1
+                   PERFORM 380-IMPRIMIR-SOCIO
+                   PERFORM 360-LEER-SOC
+               END-PERFORM.
 
            340-ACT-FIL.
                MOVE fil-cod TO filActual.
@@ -112,4 +115,6 @@
                CLOSE SOCIOS.
                CLOSE FILIALES.
 
+           999-EXIT.
+               EXIT.
        END PROGRAM YOUR-PROGRAM-NAME.

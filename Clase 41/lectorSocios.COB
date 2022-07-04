@@ -18,7 +18,7 @@
        FD  SOCIOS.
        01  soc-reg.
            03 reg-cod-ind.
-               05 soc-fil pic 9.
+               05 soc-fil pic 99.
                05 soc-cod pic 999.
            03 soc-nom pic x(15).
            03 soc-saldo pic s9(6)v99.
