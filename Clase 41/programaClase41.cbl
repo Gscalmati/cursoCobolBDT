@@ -36,6 +36,7 @@
        WORKING-STORAGE SECTION.
        01  ing-fil pic 99.
        01  flag pic 9.
+       01  flagFil pic 9.
        01  filActual pic 99.
 
        PROCEDURE DIVISION.
@@ -56,8 +57,8 @@
            200-PEDIR-FILIAL.
                DISPLAY "Inserte Numero de Filial. Para fin ingrese 0".
                ACCEPT ing-fil.
-               MOVE 0 TO flag.
-               PERFORM UNTIL flag = 1 OR ing-fil = 0
+               MOVE 0 TO flagFil.
+               PERFORM UNTIL flagFil = 1 OR ing-fil = 0
                    PERFORM 210-VALIDAR-FILIAL
                END-PERFORM.
 
@@ -69,7 +70,8 @@
                       DISPLAY "Inserte una Filial Existente. 0 para fin"
                       ACCEPT ing-fil
                    NOT INVALID KEY
-                      MOVE 1 TO flag.
+                      MOVE 1 TO flagFil.
+
 
 
 
@@ -80,7 +82,8 @@
                START SOCIOS KEY IS > soc-clave
                    INVALID KEY
                        DISPLAY "No hay Socios para esta Filial"
-                       GO TO 999-EXIT.
+                       GO TO 999-EXIT
+               END-START.
                PERFORM 330-PROCESAR-SOCIO.
 
 
@@ -94,8 +97,7 @@
                DISPLAY "FILIAL N ", fil-cod, " - ", fil-nom.
                PERFORM 340-ACT-FIL.
                PERFORM 360-LEER-SOC.
-
-               PERFORM UNTIL filActual <> soc-fil OR flag = 1
+               PERFORM UNTIL (filActual <> soc-fil) OR (flag = 1)
                    PERFORM 380-IMPRIMIR-SOCIO
                    PERFORM 360-LEER-SOC
                END-PERFORM.
@@ -107,8 +109,8 @@
                READ SOCIOS NEXT AT END MOVE 1 TO flag.
 
            380-IMPRIMIR-SOCIO.
-               DISPLAY soc-cod, " - ",
-               soc-fil, " - ",
+               DISPLAY  soc-fil, " - ",
+              soc-cod, " - ",
                soc-nom, " - $", soc-saldo.
 
            400-FINAL.

@@ -1,5 +1,9 @@
 01005Horacio        10000000
+01050Pedro          00000500
 01120Mirta          00005000
 03300Giovanni       00150000
+03350Latriel        00990000
+03380Yanina         00044000
 05400DiegoArmando   99999999
 06600LionelMessi    00000001
+07700JuanDPeron     10500000
